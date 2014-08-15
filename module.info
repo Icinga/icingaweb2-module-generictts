@@ -1,0 +1,6 @@
+Module: generictts
+Version: 2.0.0~beta1
+Description: Generic Trouble Ticket System connection module
+ This module allows to easily link issue/ticket numbers in your Icinga
+ acknowledgement or downtime comments. Configure a pattern matching
+ your ticket numbers and a URL with placeholders.
