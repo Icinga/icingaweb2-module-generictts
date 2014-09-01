@@ -3,11 +3,11 @@
 namespace Icinga\Module\Generictts;
 
 use Icinga\Application\Config;
-use Icinga\Web\Hook\Ticket as IcingaTicket;
+use Icinga\Web\Hook\TicketHook;
 use Icinga\Web\Url;
 use Icinga\Exception\ConfigurationError;
 
-class Ticket extends IcingaTicket
+class Ticket extends TicketHook
 {
     protected $pattern;
     protected $url;
