@@ -15,15 +15,13 @@ class Ticket extends TicketHook
     protected function init()
     {
         $config = Config::module('generictts');
-        if (isset($config->ticket)) {
-            $pattern = $config->ticket->get('pattern', null);
-            $url = $config->ticket->get('url', null);
-            if ($pattern === null || $url === null) {
-                return;
-            }
-            $this->pattern = $pattern;
-            $this->url = $url;
+        $pattern = $config->get('ticket', 'pattern');
+        $url = $config->get('ticket', 'url');
+        if ($pattern === null || $url === null) {
+            return;
         }
+        $this->pattern = $pattern;
+        $this->url = $url;
     }
 
     public function getPattern()
