@@ -9,8 +9,8 @@ use Icinga\Exception\ConfigurationError;
 
 class Ticket extends TicketHook
 {
-    protected $pattern;
-    protected $url;
+    protected $pattern = '/this-will-not-match(\d{3-6})/';
+    protected $url = 'http://no-such-domain.example.com/ticket?id=$1';
 
     protected function init()
     {
