@@ -14,11 +14,11 @@ Once installed, nothing will happen, Icinga Web 2 continues to work as it did be
 
 The following sample should perfectly explain all the available settings:
 
-@@@ini
+```ini
 [ticket]
 pattern = "/#(\d{4,6})/"
 url = "https://my.ticket.system/tickets/id=$1"
-@@@
+```
 
 You need to understand regular expressions for this configuration. What happens here is that whenever we stumble over a text containing # followed by four to six digits, that number will be replaced by a link pointing to that specific ticket in your TTS.
 
