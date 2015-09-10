@@ -10,13 +10,15 @@ Like with any other Icinga Web 2 module just drop me to one of your module folde
 
 Once installed, nothing will happen, Icinga Web 2 continues to work as it did before. Things change once you create a configuration in
 
-  ICINGAWEB_CONFIGDIR/modules/generictts/config.ini
+    ICINGAWEB\_CONFIGDIR/modules/generictts/config.ini
 
 The following sample should perfectly explain all the available settings:
 
-  [ticket]
-  pattern = "/#(\d{4,6})/"
-  url = "https://my.ticket.system/tickets/id=$1"
+@@@ini
+[ticket]
+pattern = "/#(\d{4,6})/"
+url = "https://my.ticket.system/tickets/id=$1"
+@@@
 
 You need to understand regular expressions for this configuration. What happens here is that whenever we stumble over a text containing # followed by four to six digits, that number will be replaced by a link pointing to that specific ticket in your TTS.
 
