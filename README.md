@@ -16,7 +16,7 @@ The following sample should perfectly explain all the available settings:
 
 ```ini
 [ticket]
-pattern = "/#(\d{4,6})/"
+pattern = "/#([0-9]{4,6})/"
 url = "https://my.ticket.system/tickets/id=$1"
 ```
 
