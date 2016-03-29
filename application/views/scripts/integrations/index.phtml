@@ -1,0 +1,56 @@
+<div class="controls">
+    <?= $tabs ?>
+    <?= $this->qlink(
+        $this->translate('Integrate New Ticket System') ,
+        'generictts/integrations/new',
+        null,
+        array(
+            'class'             => 'action-link',
+            'data-base-target'  => '_next',
+            'icon'              => 'plus',
+            'title'             => $this->translate('Integrate a new trouble ticket system')
+        )
+    ) ?>
+</div>
+<div class="content">
+<?php /** @var \Icinga\Application\Config $integrations */ if ($integrations->isEmpty()): ?>
+    <p><?= $this->translate('No ticket system has been integrated yet.') ?></p>
+<?php return; endif ?>
+    <table class="tts-integrations-table common-table table-row-selectable" data-base-target="_next">
+        <thead>
+            <tr>
+                <th><?= $this->translate('Name') ?></th>
+                <th><?= $this->translate('Pattern') ?></th>
+                <th><?= $this->translate('URL') ?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($integrations as $name => $integration): /** @var object $role */ ?>
+            <tr>
+                <td>
+                    <?= $this->qlink(
+                        $name,
+                        'generictts/integrations/update',
+                        array('integration' => $name),
+                        array('title' => sprintf($this->translate('Update integration %s'), $name))
+                    ) ?>
+                </td>
+                <td><?= $this->escape($integration->pattern) ?></td>
+                <td><?= $this->escape($integration->url) ?></td>
+                <td class="icon-col text-right">
+                    <?= $this->qlink(
+                        '',
+                        'generictts/integrations/remove',
+                        array('integration' => $name),
+                        array(
+                            'class' => 'action-link',
+                            'icon'  => 'cancel',
+                            'title' => sprintf($this->translate('Remove integration %s'), $name)
+                        )
+                    ) ?>
+                </td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
