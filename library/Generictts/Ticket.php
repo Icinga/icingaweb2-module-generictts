@@ -1,38 +1,70 @@
 <?php
+/* Icinga Web 2 | (c) 2014 Icinga Development Team | GPLv2+ */
 
 namespace Icinga\Module\Generictts;
 
 use Icinga\Application\Config;
 use Icinga\Web\Hook\TicketHook;
-use Icinga\Web\Url;
-use Icinga\Exception\ConfigurationError;
 
+/**
+ * GenericTTS TicketHook implementation
+ */
 class Ticket extends TicketHook
 {
-    protected $pattern = '/this-will-not-match(\d{3-6})/';
-    protected $url = 'http://no-such-domain.example.com/ticket?id=$1';
+    /**
+     * GenericTTS configuration
+     *
+     * @var \Icinga\Application\Config
+     */
+    protected $config;
 
+    /**
+     * Configured trouble ticket system integrations
+     *
+     * @var \Icinga\Application\Hook\Ticket\TicketPattern[]
+     */
+    protected $ticketPatterns;
+
+    /**
+     * {@inheritdoc}
+     */
     protected function init()
     {
         $config = Config::module('generictts');
-        $pattern = $config->get('ticket', 'pattern');
-        $url = $config->get('ticket', 'url');
-        if ($pattern === null || $url === null) {
-            return;
+        $this->config = $config;
+
+        $ticketPatterns = array();
+        foreach ($config as $section => $values) {
+            if ($values->get('url')) { // Skip integrations that don't contain a URL
+                $ticketPattern = $this->createTicketPattern($section, $values->get('pattern'));
+                if ($ticketPattern->isValid()) { // Skip integrations that don't contain a pattern
+                    $ticketPatterns[$section] = $ticketPattern;
+                }
+            }
         }
-        $this->pattern = $pattern;
-        $this->url = $url;
+        $this->ticketPatterns = $ticketPatterns;
     }
 
+    /**
+     * {@inheritdoc}
+     *
+     * @return  \Icinga\Application\Hook\Ticket\TicketPattern[]
+     */
     public function getPattern()
     {
-        return $this->pattern;
+        return $this->ticketPatterns;
     }
 
-    public function createLink($id)
+    /**
+     * {@inheritdoc}
+     */
+    public function createLink($match)
     {
-        return '<a href="'
-            . preg_replace('/\$1/', urlencode($id[1]), $this->url)
-            . '" target="_blank">' . $id[0] . '</a>';
+        /** @var \Icinga\Application\Hook\Ticket\TicketPattern $match */
+        return sprintf(
+            '<a href="%s" target="_blank">%s</a>',
+            preg_replace('/\$1/', rawurlencode($match[1]), $this->config->get($match->getName(), 'url')),
+            $match[0]
+        );
     }
 }
