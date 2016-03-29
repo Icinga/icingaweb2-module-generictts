@@ -3,8 +3,8 @@
 
 /** @var $this \Icinga\Application\Modules\Module */
 
-$this->provideConfigTab('general', array(
-    'title' => $this->translate('Adjust the general configuration of the GenericTTS module'),
-    'label' => $this->translate('General'),
-    'url' => 'config'
+$this->provideConfigTab('integrations', array(
+    'label' => $this->translate('TTS Integrations'),
+    'title' => $this->translate('Manage trouble ticket system integrations'),
+    'url'   => 'integrations'
 ));
