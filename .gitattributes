@@ -1,3 +1,5 @@
-.gitignore                          export-ignore
-.gitattributes                      export-ignore
-icingaexchange.yml                  export-ignore
+# Exclude files related to git when creating an archive
+.git* export-ignore
+
+# Exclude Icinga Exchange control-file when creating an archive
+icingaexchange.yml export-ignore

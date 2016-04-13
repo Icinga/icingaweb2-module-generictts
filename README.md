@@ -1,43 +1,44 @@
 # Generic TTS - Icinga Web 2 module
 
-This module is a basic sample implementation of the Icinga Web 2 ticket hook. In
-contrast to specialised modules deeply integrating with specific trouble
-ticketing systems (TTS), this module only wants to recognize specific patterns
-(e.g. #12345) and replace them with a link pointing to the related ticket.
+Generic TTS implements Icinga Web 2's ticket hook for replacing ticket patterns
+with links to your trouble ticket system (TTS).
+Icinga Web 2's core module `monitoring` for example uses the ticket hook for
+acknowledgements, downtimes and comments.
+Other modules may use the ticket hook for all kinds of text too.
 
 ## Installation
 
-Like with any other Icinga Web 2 module just drop me to one of your module
-folders and enable the `generictts` module in your web frontend or on CLI.
-Of course the `monitoring` module needs to be enabled and that's it, we have no
-farther dependencies.
+Like with any other Icinga Web 2 module just drop `generictts` into the modules directory and enable
+the module in your web frontend or via Web 2's CLI.
+
+This module has no dependencies.
 
 ## Configuration
 
-Once installed, nothing will happen, Icinga Web 2 continues to work as it did
-before. Things change once you create a configuration in
+After you've enabled `generictts` you reach its configuration in Icinga Web 2 via the module's configuration tab. 
+But you may also change its configuration manually.
+`generictts` maintains a configuration file which is normally located at:
 
-    ICINGAWEB\_CONFIGDIR/modules/generictts/config.ini
+```
+/etc/icingaweb2/modules/generictts/config.ini
+```
 
 The following sample should perfectly explain all the available settings:
 
-```ini
-[ticket]
+```
+[my-ticket-system]
 pattern = "/#([0-9]{4,6})/"
 url = "https://my.ticket.system/tickets/id=$1"
 ```
 
-You need to understand regular expressions for this configuration. What happens
-here is that whenever we stumble over a text containing # followed by four to
+You have to understand regular expressions for this configuration. What happens
+here is that whenever we stumble over a text containing a # followed by four to
 six digits, that number will be replaced by a link pointing to that specific
 ticket in your TTS.
 
 ## TODO
 
-This module has still alpha quality, but works fine so far. A dedicated config
-tab with some hints and examples would be great, not everybody speaks regex.
-I'd also like to see support for multiple patterns at once, allowing one to
-support multiple TTS systems in parallel with a single Icinga Web installation.
+Configuration hints and examples would be great because not everybody speaks regex.
 
 
 
