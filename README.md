@@ -9,7 +9,7 @@ Other modules may use the ticket hook for all kinds of text too.
 ## Installation
 
 Like with any other Icinga Web 2 module just drop `generictts` into the modules directory and enable
-the module in your web frontend or via Web 2's CLI. It is important that the module directory is `Generictts` or `generictts`, otherwise Icingaweb2 will throw errors on multiple occasions.
+the module in your web frontend or via Web 2's CLI. It is important that the module directory is `generictts`, otherwise Icingaweb2 will throw errors on multiple occasions.
 
 This module has no dependencies.
 
