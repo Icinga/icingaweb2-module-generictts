@@ -36,11 +36,16 @@ here is that whenever we stumble over a text containing a # followed by four to
 six digits, that number will be replaced by a link pointing to that specific
 ticket in your TTS.
 
-## TODO
+## Examples
 
-Configuration hints and examples would be great because not everybody speaks regex.
+Below you can find a working example for JIRA and OTRS.
 
+```
+[jira]
+pattern = "/([A-Z]+-[0-9]{1,9})/i"
+url = "https://jira.example.com/browse/$1"
 
-
-
-
+[otrs]
+pattern = "/#([0-9]{1,9})/"
+url = "http://otrs.example.com/otrs/index.pl?Action=AgentTicketSearch&Subaction=Search&TicketNumber=$1"
+```
