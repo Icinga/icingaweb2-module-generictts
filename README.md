@@ -23,18 +23,21 @@ But you may also change its configuration manually.
 /etc/icingaweb2/modules/generictts/config.ini
 ```
 
-The following sample should perfectly explain all the available settings:
+You have to understand regular expressions for this configuration. A pattern
+must be provided that captures the relevant value into capture group `$1`.
 
-```
+What happens in the following example here is that whenever we stumble over a
+text containing a # followed by four to six digits, that number will be
+replaced by a link pointing to that specific ticket in your TTS.
+
+```ini
 [my-ticket-system]
 pattern = "/#([0-9]{4,6})/"
 url = "https://my.ticket.system/tickets/id=$1"
 ```
 
-You have to understand regular expressions for this configuration. What happens
-here is that whenever we stumble over a text containing a # followed by four to
-six digits, that number will be replaced by a link pointing to that specific
-ticket in your TTS.
+
+
 
 ## TODO
 
