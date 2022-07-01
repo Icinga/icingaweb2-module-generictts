@@ -4,7 +4,7 @@
 namespace Icinga\Module\Generictts;
 
 use Icinga\Application\Config;
-use Icinga\Web\Hook\TicketHook;
+use Icinga\Application\Hook\TicketHook;
 
 /**
  * GenericTTS TicketHook implementation
