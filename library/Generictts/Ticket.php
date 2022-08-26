@@ -62,7 +62,7 @@ class Ticket extends TicketHook
     {
         /** @var \Icinga\Application\Hook\Ticket\TicketPattern $match */
         return sprintf(
-            '<a href="%s" target="_blank">%s</a>',
+            '<a href="%1$s" target="_blank" title="%1$s">%2$s</a>',
             preg_replace('/\$1/', rawurlencode($match[1]), $this->config->get($match->getName(), 'url')),
             $match[0]
         );
