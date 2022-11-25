@@ -1,6 +1,21 @@
-# Installation
+<!-- {% if index %} -->
+# Installing Icinga Web Generic TTS Integration
 
-Like with any other Icinga Web module just drop `generictts` into the modules directory and enable
-the module in your web frontend or via Icinga Web's CLI.
+The recommended way to install Icinga Web Generic TTS Integration and its dependencies is to use prebuilt packages for
+all supported platforms from our official release repository.
+Please note that [Icinga Web](https://icinga.com/docs/icinga-web) is required to run Icinga Web Generic TTS Integration
+and if it is not already set up, it is best to do this first.
 
-This module has no dependencies.
+The following steps will guide you through installing and setting up Icinga Web Generic TTS Integration.
+
+<!-- {% else %} -->
+<!-- {% if not icingaDocs %} -->
+
+## Installing Icinga Web Generic TTS Integration Package
+
+If the [repository](https://packages.icinga.com) is not configured yet, please add it first.
+Then use your distribution's package manager to install the `icinga-generictts` package
+or install [from source](02-Installation.md.d/From-Source.md).
+
+<!-- {% endif %} -->
+<!-- {% endif %} --><!-- {# end else if index #} -->

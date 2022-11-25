@@ -1,4 +1,4 @@
-# Icinga Generic Trouble Ticket System Integration
+# Icinga Web Generic TTS Integration
 
 Generic TTS implements Icinga Web's ticket hook for replacing ticket patterns
 with links to your trouble ticket system (TTS).
