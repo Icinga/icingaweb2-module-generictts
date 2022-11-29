@@ -1,4 +1,5 @@
 <?php
+
 /* Icinga Web 2 | (c) 2015 Icinga Development Team | GPLv2+ */
 
 /** @var $this \Icinga\Application\Modules\Module */
