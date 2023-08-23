@@ -1,0 +1,96 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Controllers\\\\IntegrationsController\\:\\:indexAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Controllers\\\\IntegrationsController\\:\\:newAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Controllers\\\\IntegrationsController\\:\\:removeAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Controllers\\\\IntegrationsController\\:\\:updateAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$name of method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:bind\\(\\) expects string, mixed given\\.$#"
+			count: 2
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$name of method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:remove\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: application/controllers/IntegrationsController.php
+
+		-
+			message: "#^Cannot call method getValue\\(\\) on Zend_Form_Element\\|null\\.$#"
+			count: 3
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:add\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:createElements\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:createElements\\(\\) has parameter \\$formData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:onRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:update\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Parameter \\#1 \\$name of method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:add\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Parameter \\#1 \\$name of method Icinga\\\\Module\\\\Generictts\\\\Forms\\\\Config\\\\TtsIntegrationConfigForm\\:\\:update\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: application/forms/Config/TtsIntegrationConfigForm.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Ticket\\:\\:createLink\\(\\) has parameter \\$match with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: library/Generictts/Ticket.php
+
+		-
+			message: "#^Method Icinga\\\\Module\\\\Generictts\\\\Ticket\\:\\:init\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: library/Generictts/Ticket.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function rawurlencode expects string, string\\|null given\\.$#"
+			count: 1
+			path: library/Generictts/Ticket.php
+
+		-
+			message: "#^Parameter \\#2 \\$pattern of method Icinga\\\\Application\\\\Hook\\\\TicketHook\\:\\:createTicketPattern\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: library/Generictts/Ticket.php
+
+		-
+			message: "#^Parameter \\#3 \\$subject of function preg_replace expects array\\|string, mixed given\\.$#"
+			count: 1
+			path: library/Generictts/Ticket.php
