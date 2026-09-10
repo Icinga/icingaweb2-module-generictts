@@ -1,15 +1,7 @@
-# Icinga Web GenericTTS Integration
+## This module has moved
 
-With the Icinga Web GenericTTS integration, you can replace ticket patterns in acknowledgements,
-downtimes, and comments with links to your trouble ticket systems.
-To do this, you configure one or more unique regular expressions to link to them.
+Development of the GenericTTS module continues at
+[Linuxfabrik/icingaweb2-module-generictts](https://github.com/Linuxfabrik/icingaweb2-module-generictts).
 
-## Documentation
-
-Icinga Web GenericTTS Integration documentation is available at [icinga.com/docs](https://icinga.com/docs/icinga-web-generictts-integration/latest/).
-
-## License
-
-Icinga Web GenericTTS Integration
-and the Icinga Web GenericTTS Integration documentation are licensed under the terms of the
-[GNU General Public License Version 2](LICENSE).
+This repository is archived and read-only. Issues and pull requests filed here will not be
+picked up. Future releases are published at the new location only.
